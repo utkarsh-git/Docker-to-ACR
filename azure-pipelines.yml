@@ -19,3 +19,14 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+- task: CopyPublishBuildArtifacts@1
+  inputs:
+    CopyRoot: '/home/vsts/work/1/s/target/my-app-1.0-SNAPSHOT-shaded.jar'
+    Contents: '/home/vsts/work/1/s/target/my-app-1.0-SNAPSHOT-shaded.jar'
+    ArtifactName: 'Staging Build'
+    ArtifactType: 'FilePath'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
