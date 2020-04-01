@@ -23,8 +23,8 @@ steps:
   inputs:
     CopyRoot: '/home/vsts/work/1/s/target/my-app-1.0-SNAPSHOT-shaded.jar'
     Contents: '/home/vsts/work/1/s/target/my-app-1.0-SNAPSHOT-shaded.jar'
-    ArtifactName: 'Staging Build'
-    ArtifactType: 'FilePath'
+    ArtifactName: 'Staging build'
+    ArtifactType: 'Container'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
