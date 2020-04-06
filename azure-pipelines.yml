@@ -19,11 +19,6 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-- task: CopyPublishBuildArtifacts@1
-  inputs:
-    Contents: '**'
-    ArtifactName: 'Jar_File'
-    ArtifactType: 'Container'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
