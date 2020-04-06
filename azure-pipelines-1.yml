@@ -15,3 +15,8 @@ steps:
     command: 'build'
     Dockerfile: '**/Dockerfile.txt'
     addPipelineData: false
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker_to_ACR'
+    command: 'push'
+    addPipelineData: false
